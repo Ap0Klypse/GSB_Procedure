@@ -44,10 +44,12 @@ public class JIFVisiteListe extends JInternalFrame implements ActionListener{
 	protected JLabel JLmatricule;
 	protected JLabel JLdate;
 	protected JLabel JLreference;
+	protected JLabel JLmessage;
 	
 	protected JTextField JTmatricule;
 	protected JTextField JTdate;
 	protected JTextField JTreference;
+	
 	
 	private JButton Brecherche;
 	private JButton Baffiche;
@@ -64,12 +66,13 @@ public class JIFVisiteListe extends JInternalFrame implements ActionListener{
 		
 		
     	p = new JPanel();  // panneau principal de la fenêtre
-        
-        pTexte1 = new JPanel(new GridLayout(3,2)); //premier panneau (form)
+    	
+        pTexte1 = new JPanel(new GridLayout(2,3)); //premier panneau (form)
         
         
         JLmatricule= new JLabel("Code Visiteur");
         JLdate= new JLabel("Date");
+        JLmessage=new JLabel("");
         
         JTmatricule = new JTextField();
         JTdate = new JTextField();
@@ -78,7 +81,10 @@ public class JIFVisiteListe extends JInternalFrame implements ActionListener{
         
         pTexte1.add(JLmatricule);
         pTexte1.add(JTmatricule);
+        pTexte1.add(JLmessage);
+        
         pTexte1.add(JLdate);
+        
         pTexte1.add(JTdate);
         pTexte1.add(Brecherche);
         Brecherche.addActionListener(this);
@@ -102,6 +108,7 @@ public class JIFVisiteListe extends JInternalFrame implements ActionListener{
     			}
     		String[] columnNames = {"Référence", "CodeMed", "Lieu"};
     		table = new JTable(data, columnNames);
+    		
     		table.getSelectionModel().addListSelectionListener(table);
     		scrollPane = new JScrollPane(table);
     		scrollPane.setPreferredSize(new Dimension(400, 150));

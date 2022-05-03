@@ -41,7 +41,7 @@ public class AffichageModele {
 		System.out.println("Adresse Médecin :"+leMedecin.getAdresse());
 		afficherLocalite(leMedecin.getLaLocalite());
 		System.out.println(" Numéro de Téléphone :"+leMedecin.getTelephone());
-		System.out.println("potentiel :"+leMedecin.getPotentiel());
+		System.out.println("confiance :"+leMedecin.getConfiance());
 		System.out.println("Spécialité :"+leMedecin.getSpecialite());
 	}
 }

@@ -49,12 +49,16 @@ public class JIFVisiteDetail extends JInternalFrame implements ActionListener {
 	protected JLabel JLcomm;
 	protected JLabel JLmatricule;
 	protected JLabel JLcodeMed;
+	protected JLabel JLconfiance;
 	
 	protected JTextField JTref;
 	protected JTextField JTdate;
 	protected JTextArea JTcomm;
 	protected JTextField JTmatricule;
 	protected JTextField JTcodeMed;
+	protected JTextField JTconfiance;
+		
+	
 	
 	
 	
@@ -62,13 +66,14 @@ public class JIFVisiteDetail extends JInternalFrame implements ActionListener {
 		
 		setTitle("Visite détaillée");
 		p = new JPanel();
-        pTexte = new JPanel(new GridLayout(4,2));
+        pTexte = new JPanel(new GridLayout(5,2));
         pComm= new JPanel(new GridLayout(1,2));
         
         JLref= new JLabel("Référence");
         JLdate= new JLabel("Date visite");
         JLmatricule= new JLabel("Matricule visiteur");
         JLcodeMed= new JLabel("Code médecin");
+        JLconfiance= new JLabel("indice de confiance");
      
         JLcomm= new JLabel("Commentaire");
 		
@@ -77,6 +82,7 @@ public class JIFVisiteDetail extends JInternalFrame implements ActionListener {
         JTdate = new JTextField();
         JTmatricule = new JTextField();
         JTcodeMed = new JTextField();
+        JTconfiance = new JTextField();
         
         JTcomm= new JTextArea(5,20);
         JTcomm.setMaximumSize(JTcomm.getPreferredSize());
@@ -91,6 +97,8 @@ public class JIFVisiteDetail extends JInternalFrame implements ActionListener {
         pTexte.add(JLcodeMed);
         pTexte.add(JTcodeMed);
         
+        pTexte.add(JLconfiance);
+        pTexte.add(JTconfiance);
         
         p.add(pTexte);
         

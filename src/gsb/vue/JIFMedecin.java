@@ -34,7 +34,7 @@ public class JIFMedecin extends JInternalFrame  {
 	protected JLabel JLcp;
     protected JLabel JLville;
     protected JLabel JLtelephone;
-    protected JLabel JLpotentiel;
+    protected JLabel JLconfiance;
     protected JLabel JLspecialite;
     
 	protected JTextField JTcode;
@@ -44,7 +44,7 @@ public class JIFMedecin extends JInternalFrame  {
 	protected JTextField JTcp;
     protected JTextField JTville;
     protected JTextField JTtelephone;
-    protected JTextField JTpotentiel;
+    protected JTextField JTconfiance;
     protected JTextField JTspecialite;
 	
     public JIFMedecin() {
@@ -59,7 +59,7 @@ public class JIFMedecin extends JInternalFrame  {
          JLcp = new JLabel("Code postal");
          JLville = new JLabel("Ville");
          JLtelephone = new JLabel("Téléphone");
-         JLpotentiel = new JLabel("potentiel");
+         JLconfiance = new JLabel("confiance");
          JLspecialite = new JLabel("ASpecialite");
          
          JTcode = new JTextField(20);
@@ -70,7 +70,7 @@ public class JIFMedecin extends JInternalFrame  {
          JTcp = new JTextField();
          JTville = new JTextField();
          JTtelephone = new JTextField();
-         JTpotentiel = new JTextField();
+         JTconfiance = new JTextField();
          JTspecialite = new JTextField();
          
          pTexte.add(JLcode);
@@ -87,8 +87,8 @@ public class JIFMedecin extends JInternalFrame  {
          pTexte.add(JTville);
          pTexte.add(JLtelephone);
          pTexte.add(JTtelephone);
-         pTexte.add(JLpotentiel);
-         pTexte.add(JTpotentiel);
+         pTexte.add(JLconfiance);
+         pTexte.add(JTconfiance);
          pTexte.add(JLspecialite);
          pTexte.add(JTspecialite);
 		
@@ -110,7 +110,7 @@ public class JIFMedecin extends JInternalFrame  {
         JTcp.setText(unMedecin.getLaLocalite().getCodePostal());
         JTville.setText(unMedecin.getLaLocalite().getVille());
         JTtelephone.setText(unMedecin.getTelephone());
-        JTpotentiel.setText(unMedecin.getPotentiel());
+        JTconfiance.setText(String.valueOf(unMedecin.getConfiance()));
         JTspecialite.setText(unMedecin.getSpecialite());
      }
      
@@ -123,7 +123,7 @@ public class JIFMedecin extends JInternalFrame  {
         JTcp.setText("");
         JTville.setText("");
         JTtelephone.setText("");
-        JTpotentiel.setText("");
+        JTconfiance.setText("");
         JTspecialite.setText("");
      }
 

@@ -14,10 +14,11 @@ import gsb.modele.dao.MedicamentDao;
 
 
 public class VisiteDao {
-	
+	/** ConnexionMySql.execReqSelection("select * from VISITE where REFERENCE='"+reference+"'"); */
 	public static Visite rechercher(String reference) {
 		Visite uneVisite =null;
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from VISITE where REFERENCE='"+reference+"'");
+		
+		ResultSet reqSelection = ConnexionMySql.execReqSelectionSqlServer("select * from VISITE where REFERENCE='"+reference+"'");
 		try {
 			if (reqSelection.next()) {
 				String ref = reqSelection.getString(1);
@@ -47,9 +48,15 @@ public class VisiteDao {
 		Medecin leMedecin = uneVisite.getLeMedecin();
 		String codeMed = leMedecin.getCodeMed();
 	**/	
-		String reqInsertion = "insert into VISITE values('"+ref+"','"+date+"','"+comm+"','"+matVisiteur+"','"+codeMed+"')";
-		int result = ConnexionMySql.execReqMaj(reqInsertion);
-		ConnexionMySql.fermerConnexionBd();
+		int result = 0;
+		if( !ref.equals(rechercher(ref).getReference())) {
+			
+			String reqInsertion = "insert into VISITE values('"+ref+"','"+date+"','"+comm+"','"+matVisiteur+"','"+codeMed+"')";
+			result = ConnexionMySql.execReqMaj(reqInsertion);
+			ConnexionMySql.fermerConnexionBd();
+		}
+		
+		
 		return result;
 		}
 	
@@ -72,7 +79,7 @@ public class VisiteDao {
 			 dateRq="%"+date+"%";
 		}
 		
-		ResultSet reqSelection = ConnexionMySql.execReqSelection(
+		ResultSet reqSelection = ConnexionMySql.execReqSelectionSqlServer(
 				"select REFERENCE from VISITE where MATRICULE like'"+matRq+"' and DATEVISITE like'"+dateRq+"'");
 		try {
 			while(reqSelection.next()) {
@@ -99,7 +106,7 @@ public class VisiteDao {
 	
 	public static HashMap<String,Offrir> rechercherMedicaments(String reference) {
 		HashMap<String,Offrir> lesMedicaments = new HashMap<String,Offrir>();
-		ResultSet reqVisite = ConnexionMySql.execReqSelection("select * from OFFRIR where REFERENCE='"+reference+"'");
+		ResultSet reqVisite = ConnexionMySql.execReqSelectionSqlServer("select * from OFFRIR where REFERENCE='"+reference+"'");
 		int i = 0;
 		try {
 			while(reqVisite.next()) {

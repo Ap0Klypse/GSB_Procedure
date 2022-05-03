@@ -44,7 +44,8 @@ public class JIFMedecinListeCol extends JInternalFrame implements ActionListener
 	protected MenuPrincipal fenetreContainer;
 
 	public JIFMedecinListeCol(MenuPrincipal uneFenetreContainer) {
-
+		
+		
 		fenetreContainer = uneFenetreContainer;
 		// récupération des données Medecin dans la collection
 		lesMedecins = MedecinDao.retournerCollectionDesMedecins();

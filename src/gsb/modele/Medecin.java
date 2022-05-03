@@ -19,7 +19,7 @@ public class Medecin {
 	protected String adresse;
 	protected Localite laLocalite;
 	protected String telephone;
-	protected String potentiel;
+	protected int confiance;
 	protected String specialite;
 	/**
 	 * @param codeMed
@@ -33,14 +33,14 @@ public class Medecin {
 	 */
 	public Medecin(String codeMed, String nom, String prenom,
 			String adresse, Localite laLocalite, String telephone,
-			String potentiel, String specialite) {
+			int confiance, String specialite) {
 		this.codeMed = codeMed;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
 		this.laLocalite = laLocalite;
 		this.telephone = telephone;
-		this.potentiel = potentiel;
+		this.confiance = confiance;
 		this.specialite = specialite;
 	}
 	/**
@@ -118,14 +118,14 @@ public class Medecin {
 	/**
 	 * @return Renvoie potentiel.
 	 */
-	public String getPotentiel() {
-		return potentiel;
+	public int getConfiance() {
+		return confiance;
 	}
 	/**
 	 * @param potentiel potentiel à définir.
 	 */
-	public void setPotentiel(String potentiel) {
-		this.potentiel = potentiel;
+	public void setPotentiel(int confiance) {
+		this.confiance = confiance;
 	}
 	/**
 	 * @return Renvoie specialite.

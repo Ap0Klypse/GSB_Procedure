@@ -54,6 +54,7 @@ public class JIFVisiteMaj extends JInternalFrame implements ActionListener{
 	protected JLabel JLcomm;
 	protected JLabel JLmatricule;
 	protected JLabel JLcodeMed;
+
 	
 	protected JTextField JTref;
 	protected JTextField JTdate;

@@ -58,6 +58,9 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		JMenuItem mC2 = new JMenuItem("Liste Medecins");
 		mC2.addActionListener(this);
 		mMedecins.add(mC2);
+		JMenuItem mC3 = new JMenuItem("Archiver Retraités");
+		mC3.addActionListener(this);
+		mMedecins.add(mC3);
 
 		mMedicaments = new JMenu("Medicaments");
 		JMenuItem mE1 = new JMenuItem("Consultation Medicament");
@@ -111,7 +114,9 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 				ouvrirFenetre(new JIFMedecinListeDic(this));
 			} else if (ChoixOption.equals("Ajout Visite")) {
 				ouvrirFenetre(new JIFVisiteAjout());
-			} else if (ChoixOption.equals("Liste Visite")) {
+			} else if(ChoixOption.equals("Archiver Retraités")) {
+				ouvrirFenetre(new JIFMedecinArchive(this));
+			}else if (ChoixOption.equals("Liste Visite")) {
 				ouvrirFenetre(new JIFVisiteListe(this, null,null));
 			} else if (ChoixOption.equals("Maj Visite")) {
 				ouvrirFenetre(new JIFVisiteMaj(this, null));
@@ -136,7 +141,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		myJInternalFrame.setResizable(true);
 		myJInternalFrame.setMaximizable(true);
 		myJInternalFrame.setClosable(true);
-		myJInternalFrame.setSize(480, 380);
+		myJInternalFrame.setSize(480, 300);
 		desktopPane.add(myJInternalFrame);
 	}
 

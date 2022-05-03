@@ -21,14 +21,14 @@ public class MedecinServiceTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Medecin unMedecin = MedecinService.rechercherMedecin("m002");
+		Medecin unMedecin = MedecinService.rechercherMedecin("m001");
 		System.out.println(unMedecin.getNom());
 		System.out.println(unMedecin.getPrenom());
 		System.out.println(unMedecin.getAdresse());
 		System.out.println(unMedecin.getLaLocalite().getCodePostal());
 		System.out.println(unMedecin.getLaLocalite().getVille());
 		System.out.println(unMedecin.getTelephone());
-		System.out.println(unMedecin.getPotentiel());
+		System.out.println(unMedecin.getConfiance());
 		System.out.println(unMedecin.getSpecialite());
 		
 		

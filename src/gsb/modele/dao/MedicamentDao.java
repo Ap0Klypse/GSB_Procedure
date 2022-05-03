@@ -14,7 +14,7 @@ public class MedicamentDao {
 	 */ 
 	public static Medicament rechercherMedicament(String idMedicament) { 
 		Medicament unMedicament = null; 
-		ResultSet query = ConnexionMySql.execReqSelection("select * from MEDICAMENT where MED_DEPOTLEGAL = '" + idMedicament + "'"); 
+		ResultSet query = ConnexionMySql.execReqSelectionSqlServer("select * from MEDICAMENT where MED_DEPOTLEGAL = '" + idMedicament + "'"); 
 		 
 		try { 
 			if (query.next()) { 
@@ -36,7 +36,7 @@ public class MedicamentDao {
 		 
 		ArrayList<Medicament> ListeDesMedicament = new ArrayList<Medicament>(); 
 		Medicament unMedicament = null; 
-		ResultSet query = ConnexionMySql.execReqSelection("select * from MEDICAMENT"); 
+		ResultSet query = ConnexionMySql.execReqSelectionSqlServer("select * from MEDICAMENT"); 
 		try{ 
 		while (query.next()) { 
 			unMedicament = null; 
@@ -59,7 +59,7 @@ public class MedicamentDao {
 	public static ArrayList<Medicament> ListMedicamentFam(String famille){ 
 		ArrayList<Medicament> ListeDesMedicamentFamille = new ArrayList<Medicament>(); 
 		Medicament unMedicament = null; 
-		ResultSet query = ConnexionMySql.execReqSelection("select * from MEDICAMENT where FAM_LIBELLE = '" + famille + "'"); 
+		ResultSet query = ConnexionMySql.execReqSelectionSqlServer("select * from MEDICAMENT where FAM_LIBELLE = '" + famille + "'"); 
 		try{ 
 		while (query.next()) { 
 			unMedicament = null; 
@@ -79,7 +79,7 @@ public class MedicamentDao {
 		Medicament unMedicament = null; 
 		
 		try{
-			ResultSet query = ConnexionMySql.execReqSelection("SELECT * FROM MEDICAMENT WHERE MED_DEPOTLEGAL = '" + Code + "'"); 
+			ResultSet query = ConnexionMySql.execReqSelectionSqlServer("SELECT * FROM MEDICAMENT WHERE MED_DEPOTLEGAL = '" + Code + "'"); 
 			while (query.next()) { 
 			unMedicament = new Medicament(query.getString(1), query.getString(2), query.getString(3), query.getString(4), query.getString(5), query.getFloat(6), query.getString(7), query.getString(8));
 			}
@@ -115,7 +115,7 @@ public class MedicamentDao {
 		}else {
 			matRq = "%" + Famille + "%";
 		}
-		ResultSet query = ConnexionMySql.execReqSelection("select * from MEDICAMENT where FAM_CODE like '"+matRq+"'");
+		ResultSet query = ConnexionMySql.execReqSelectionSqlServer("select * from MEDICAMENT where FAM_CODE like '"+matRq+"'");
 		try {
 			while(query.next()){
 				String reference = query.getString(1);
